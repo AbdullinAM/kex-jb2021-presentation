@@ -1,5 +1,5 @@
-% Pandoc presentation example
-% Author
+% How we tried to improve the KEX in 2021
+% Azat Abdullin
 
 # Title
 
