@@ -174,6 +174,7 @@ public void add(int index, E element) {
 	* limited in expressivness
 	* limited number of supported classes
 * no thorough evaluation
+	* experiments show a small increase in coverage
 
 
 ################################################################################
@@ -192,13 +193,93 @@ public void add(int index, E element) {
 
 # Reanimator
 
+* an approach to generate valid code snippets using
+only public API
+	* can’t produce invalid objects
+* works in reasonable time
+* applicable in any automatic test generation tool
+* can be used in any programming language
+
+
+################################################################################
+
+# Reanimator at the end of 2020
+
+* working prototype
+* evaluation:
+	* testing with Kex on open source projects from github
+	* testing on random objects
+* can successfully and efficiently generate 70% of target
+objects on average
+
+**Problem: evaluation is not repreesntative enough**
+
+
+################################################################################
+
+# Reanimator: current state
+
+* implemented as part of Tardis\footnote{Braione P., Denaro G. SUSHI and TARDIS at the SBST2019 Tool Competition //2019 IEEE/ACM 12th International Workshop on Search-Based Software Testing (SBST). – IEEE, 2019. – С. 25-28.} tool
+* compared with its default test generator --- Evosuite\footnote{Fraser G., Arcuri A. Evosuite: automatic test suite generation for object-oriented software //Proceedings of the 19th ACM SIGSOFT symposium and the 13th European conference on Foundations of software engineering. – 2011. – С. 416-419.}
+
+\begin{center}
+\begin{tabular}{|r|c|c|c|c|}
+\hline 
+\textbf{}    & \textbf{60s} & \textbf{120s} & \textbf{300s} & \textbf{600s} \\ 
+\hline 
+\texttt{tardis + evosuite}  & 13.96\% & 15.71\% & 18.50\% & 19.60\% \\ 
+\hline 
+\texttt{tardis + reanimator}  & 13.84\% & 15.99\% & 17.84\% & 19.30\%\\ 
+\hline 
+\texttt{kex + reanimator}  & 24.57\% & 25.29\% & 25.43\% & 27.61\%\\ 
+\hline
+\end{tabular} 
+\end{center}
+
+
+################################################################################
+
+# Reanimator: what to do
+
+???
+
+
+################################################################################
+
+# 
+
+<!-- columns -->
+:::::::::::::: {.columns}
+::: {.column width="70%"}
+![](transition)
+:::
+::::::::::::::
+
+
+################################################################################
+
+# Kex related projects
+
+* **Darya Grechishkina "Loop backstabbing for Kex"**
+* **Vladislav Feofilaktov "Spider"**
+* Petr Menshov "Effectiveness of paths search algorithms in Concolic Testing"
+	* based on the prototype from Andrey Bychkov "Conteau: Concolic Testing Augmented"
+* Golubev Kirill "SymFPU for Boolector"
+* Viktor Korotkih "KexUI"
+* Ramis Sahibgareev "Kfg pass manager"
+
+################################################################################
+
+# Conclusion
+
+TODO()
 
 ################################################################################
 
 # Contact information
 
 <!-- link -->
-<abdullin@kspt.icc.spbstu.ru>
+<azat.abdullin@jetbrains.com>
 
 \vspace{15mm}
 
