@@ -275,6 +275,7 @@ objects on average
 
 * SBST 2022
 * finish work on Reanimator
+	* integrate Reanimator with concolic mode
 * extend standard library support
 	* support of state chages in lambdas
 	* more classes
