@@ -12,9 +12,9 @@
 
 # What happened in 2021
 
-* Participation in SBST Java tool competition 2021\footnote{Panichella S. et al. Sbst tool competition 2021 //2021 IEEE/ACM 14th International Workshop on Search-Based Software Testing (SBST). – IEEE, 2021. – С. 20-27.}
-* Work towards better Java standard library support
-* Evaluation of Reanimator
+* participation in SBST Java tool competition 2021\footnote{Panichella S. et al. Sbst tool competition 2021 //2021 IEEE/ACM 14th International Workshop on Search-Based Software Testing (SBST). – IEEE, 2021. – С. 20-27.}
+* improving Java standard library support
+* evaluation of Reanimator
 
 
 ################################################################################
@@ -75,7 +75,7 @@ Automatic test case generation competition
 \end{center}
 
 
-*Applied for SBST 2022 competition*
+***Applied for SBST 2022 competition***
 
 ################################################################################
 
@@ -91,16 +91,26 @@ Automatic test case generation competition
 
 ################################################################################
 
-# Java standard library support
+# Java standard library support at the end of 2020
 
-* Java standard library is used almost everywhere
+\vspace{10mm}
+\begin{overprint}
+\onslide<1>\includegraphics{oldRT2}
+\onslide<2>\includegraphics{oldRT2}
+\end{overprint}
+
+\pause
+
+*Many of the standard library methods and classes can be approximated*
+
+<!-- * Java standard library is used almost everywhere
 * despite having access to standard library sources,
 Kex struggles to simulate it
 * many of the standard library methods and classes can be approximated
-in SMT
+in SMT -->
 
 
-################################################################################
+<!-- ################################################################################
 
 # Intrinsics library\footnote{https://github.com/vorpal-research/kex-intrinsics}
 
@@ -111,21 +121,21 @@ Intrinsics for basic operations and checks:
 * array operations:
 	* `contains` checks
 	* array generation methods
-* etc.
+* etc. -->
 
 
 ################################################################################
 
-# kex-rt\footnote{https://github.com/AbdullinAM/kex-rt}
+# Java rt-1.8 approximarion
 
-Proof-of-concept implementation:
+Prototype implementation based on `kex-intrinsics`\footnote{https://github.com/vorpal-research/kex-intrinsics}:
 
 * wrappers for primitive types
 * string builders
 * some collections (all based on `ArrayList` approximation)
 * utility methods from `Arrays` and `System` classes
 
-Kex substitutes all Java runtime operations with kex-rt analogs if they are available
+Kex substitutes all Java runtime operations with approximated analogs if they are available
 
 ################################################################################
 
@@ -134,17 +144,17 @@ Kex substitutes all Java runtime operations with kex-rt analogs if they are avai
 \small
 ```java
 @Override
-public void add(int index, E element) {
+public boolean add(E e) {
   AssertIntrinsics.kexNotNull(elementData);
   int oldLength = elementData.length;
   elementData = CollectionIntrinsics.generateObjectArray(
-  	oldLength + 1,
-  	i -> {
-      if (i < index) return elementData[i];
-      else if (i == index) return null;
-      else return elementData[i - 1];
+  	oldLength + 1, 
+  	index -> {
+      if (index < oldLength) return elementData[index];
+      else return null;
   });
-  elementData[index] = element;
+  elementData[oldLength] = e;
+  return true;
 }
 ```
 
@@ -153,7 +163,14 @@ public void add(int index, E element) {
 
 # Support of intrinsics
 
-SMT:
+Predicate State level support:
+
+* Kfg extended to support `invokedynamic`
+* PS extended to support lambdas
+	* lambdas can't change program state
+
+SMT level support:
+
 * arrays are now represented as SMT arrays
 * $\exists$ and $\forall$ quantors for array operations
 * $\lambda$ expressions for array generation
@@ -172,7 +189,7 @@ SMT:
 
 ################################################################################
 
-# Java standard library support: takeaways
+# Java standard library support: current state
 
 * prototype implementation
 	* limited in expressivness
@@ -216,7 +233,7 @@ only public API
 * can successfully and efficiently generate 70% of target
 objects on average
 
-**Problem: evaluation is not repreesntative enough**
+**Problem: evaluation is not representative enough**
 
 
 ################################################################################
@@ -224,7 +241,9 @@ objects on average
 # Reanimator: current state
 
 * implemented as part of Tardis\footnote{Braione P., Denaro G. SUSHI and TARDIS at the SBST2019 Tool Competition //2019 IEEE/ACM 12th International Workshop on Search-Based Software Testing (SBST). – IEEE, 2019. – С. 25-28.} tool
-* compared with its default test generator --- Evosuite\footnote{Fraser G., Arcuri A. Evosuite: automatic test suite generation for object-oriented software //Proceedings of the 19th ACM SIGSOFT symposium and the 13th European conference on Foundations of software engineering. – 2011. – С. 416-419.}
+* compared with its default test generator --- Evosuite\footnote{Fraser G., Arcuri A. Evosuite: automatic test suite generation for object-oriented software //Proceedings of the 19th ACM SIGSOFT symposium. – 2011. – С. 416-419.}
+
+\hspace{-100mm}
 
 \begin{center}
 \begin{tabular}{|r|c|c|c|c|}
@@ -245,43 +264,21 @@ objects on average
 
 # Reanimator: what to do
 
-???
+* implement Tardis approach in Kex
+* compare both Tardis and Reanimator on random object generation
+* improve Reanimator (duh)
 
 
 ################################################################################
 
-# 
-
-<!-- columns -->
-:::::::::::::: {.columns}
-::: {.column width="70%"}
-![](transition)
-:::
-::::::::::::::
-
-
-################################################################################
-
-# Kex related projects
-
-* **Darya Grechishkina "Loop backstabbing for Kex"**
-* **Vladislav Feofilaktov "Spider"**
-* Petr Menshov "Effectiveness of paths search algorithms in Concolic Testing"
-	* based on the prototype from Andrey Bychkov "Conteau: Concolic Testing Augmented"
-* Golubev Kirill "SymFPU for Boolector"
-* Viktor Korotkih "Interactive UI for Kex"
-* Ramis Sahibgareev "Kfg pass manager"
-
-
-################################################################################
-
-# Future work
+# Plans for the (nearest) future
 
 * SBST 2022
+* finish work on Reanimator
 * extend standard library support
 	* support of state chages in lambdas
 	* more classes
-* finish work on Reanimator paper
+
 
 ################################################################################
 
@@ -305,3 +302,17 @@ objects on average
 
 ################################################################################
 
+
+<!-- 
+
+################################################################################
+
+# Kex related projects
+
+* **Darya Grechishkina "Loop backstabbing for Kex"**
+* **Vladislav Feofilaktov "Spider"**
+* Petr Menshov "Effectiveness of paths search algorithms in Concolic Testing"
+	* based on the prototype from Andrey Bychkov "Conteau: Concolic Testing Augmented"
+* Golubev Kirill "SymFPU for Boolector"
+* Viktor Korotkih "Interactive UI for Kex"
+* Ramis Sahibgareev "Kfg pass manager" -->
