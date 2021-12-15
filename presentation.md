@@ -12,18 +12,20 @@
 
 # What happened in 2021
 
-1. Participation in SBST Java tool competition 2021\footnote{Panichella S. et al. Sbst tool competition 2021 //2021 IEEE/ACM 14th International Workshop on Search-Based Software Testing (SBST). – IEEE, 2021. – С. 20-27.}
-2. Work towards better Java standard library support
-3. Reanimator evaluation
+* Participation in SBST Java tool competition 2021\footnote{Panichella S. et al. Sbst tool competition 2021 //2021 IEEE/ACM 14th International Workshop on Search-Based Software Testing (SBST). – IEEE, 2021. – С. 20-27.}
+* Work towards better Java standard library support
+* Evaluation of Reanimator
 
 
 ################################################################################
 
 # SBST 2021
 
-* Automatic test case generation competition
-* evaluation on 6 projects with 98 benchmarks
-* each tool evaluated on 30 and 120 second time budgets
+Automatic test case generation competition
+
+* 6 test projects with 98 benchmarks
+* 30 and 120 second time budgets
+* 4 participaiting tools and 1 baseline
 
 
 ################################################################################
@@ -59,7 +61,6 @@
 	* Kfg currently uses \~2 times less RAM
 	* Kex uses only one copy of each classes of PUT
 * Kex and Reanimator were extended to support some new language features
-* applied for SBST 2022 Java tool competition
 
 \begin{center}
 \begin{tabular}{|r|c|c|}
@@ -73,6 +74,8 @@
 \end{tabular}
 \end{center}
 
+
+*Applied for SBST 2022 competition*
 
 ################################################################################
 
@@ -148,8 +151,9 @@ public void add(int index, E element) {
 
 ################################################################################
 
-# SMT support of intrinsics
+# Support of intrinsics
 
+SMT:
 * arrays are now represented as SMT arrays
 * $\exists$ and $\forall$ quantors for array operations
 * $\lambda$ expressions for array generation
@@ -265,14 +269,19 @@ objects on average
 * Petr Menshov "Effectiveness of paths search algorithms in Concolic Testing"
 	* based on the prototype from Andrey Bychkov "Conteau: Concolic Testing Augmented"
 * Golubev Kirill "SymFPU for Boolector"
-* Viktor Korotkih "KexUI"
+* Viktor Korotkih "Interactive UI for Kex"
 * Ramis Sahibgareev "Kfg pass manager"
+
 
 ################################################################################
 
-# Conclusion
+# Future work
 
-TODO()
+* SBST 2022
+* extend standard library support
+	* support of state chages in lambdas
+	* more classes
+* finish work on Reanimator paper
 
 ################################################################################
 
