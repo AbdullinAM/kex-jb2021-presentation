@@ -132,7 +132,7 @@ Prototype implementation based on `kex-intrinsics`\footnote{https://github.com/v
 
 * wrappers for primitive types
 * string builders
-* some collections (all based on `ArrayList` approximation)
+* some collections (based on `ArrayList` approximation)
 * utility methods from `Arrays` and `System` classes
 
 Kex substitutes all Java runtime operations with approximated analogs if they are available
