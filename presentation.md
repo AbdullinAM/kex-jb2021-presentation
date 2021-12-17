@@ -12,11 +12,12 @@
 
 # Kex overview
 
+\center
 ![](kexOverview)
 
 \vspace{-8mm}
 \begin{figure}
-  \hspace{91.5mm} 
+  \hspace{124mm} 
   \includegraphics[scale=0.7]{mk3guyBorealis}
 \end{figure}
 
@@ -52,9 +53,9 @@ Automatic test case generation competition
 
 <!-- ![](iMade) -->
 
-\vspace{10mm}
+\vspace{-7mm}
 \begin{figure}
-  \hspace{70mm} 
+  \hspace{90mm} 
   \includegraphics[scale=0.2]{iMade}
 \end{figure}
 
@@ -74,7 +75,7 @@ Automatic test case generation competition
 * Kex (and Reanimator) failed on some of the more complex language features (abstract classes, inner classes, etc.)
 * Kex required too much of disk space
 
-***Main teakeaway: Kex had a low level of maturityw***
+***Main teakeaway: Kex had a low level of maturity***
 
 
 ################################################################################
@@ -106,6 +107,8 @@ Automatic test case generation competition
 
 # 
 
+\vspace{8mm}
+
 <!-- columns -->
 :::::::::::::: {.columns}
 ::: {.column width="70%"}
@@ -119,10 +122,16 @@ Automatic test case generation competition
 # Java standard library support at the end of 2020
 
 \vspace{10mm}
-\begin{overprint}
+
+:::::::::::::: {.columns}
+::: {.column width="80%"}
+![](oldRT2)
+:::
+::::::::::::::
+<!-- \begin{overprint}
 \onslide<1>\includegraphics{oldRT2}
 \onslide<2>\includegraphics{oldRT2}
-\end{overprint}
+\end{overprint} -->
 
 \pause
 
@@ -228,6 +237,7 @@ SMT level support:
 
 # 
 
+\vspace{8mm}
 <!-- columns -->
 :::::::::::::: {.columns}
 ::: {.column width="70%"}
@@ -277,7 +287,6 @@ objects on average
 # Reanimator: current state
 
 
-\small
 \begin{center}
 \begin{tabular}{|r|c|c|c|c|}
 \hline 
@@ -334,11 +343,11 @@ reposotory:
 
 <!-- columns -->
 :::::::::::::: {.columns}
-::: {.column width="30%"}
+::: {.column width="20%"}
 \vspace{-10mm}
 ![](jetbrainsResearch)
 :::
-::: {.column width="40%"}
+::: {.column width="30%"}
 \vspace{1mm}
 ![](polytech)
 :::
