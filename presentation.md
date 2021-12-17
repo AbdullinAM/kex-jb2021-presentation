@@ -10,10 +10,23 @@
 
 ################################################################################
 
+# Overview
+
+\vspace{5mm}
+![](kexOverview)
+
+\vspace{5mm}
+\begin{figure}
+  \hspace{91.5mm} 
+  \includegraphics[scale=0.7]{mk3guyBorealis}
+\end{figure}
+
+################################################################################
+
 # What happened in 2021
 
-* participation in SBST Java tool competition 2021\footnote{Panichella S. et al. Sbst tool competition 2021 //2021 IEEE/ACM 14th International Workshop on Search-Based Software Testing (SBST). – IEEE, 2021. – С. 20-27.}
-* improving Java standard library support
+* participation in SBST Java tool competition 2021\footnote{Panichella S. et al. Sbst tool competition 2021 //2021 IEEE/ACM 14th International Workshop on Search-Based Software Testing (SBST). – IEEE, 2021}
+* improvement of Java standard library support
 * evaluation of Reanimator
 
 
@@ -32,12 +45,24 @@ Automatic test case generation competition
 
 # SBST 2021 results
 
+:::::::::::::: {.columns}
+::: {.column width="80%"}
 ![](sbstCoverage)
+:::
+::::::::::::::
+
+<!-- ![](iMade) -->
+
+\vspace{10mm}
+\begin{figure}
+  \hspace{70mm} 
+  \includegraphics[scale=0.2]{iMade}
+\end{figure}
 
 
 ################################################################################
 
-# SBST 2021: Kex results\footnote{Abdullin A., Akhin M., Belyaev M. Kex at the 2021 SBST Tool Competition //2021 IEEE/ACM 14th International Workshop on Search-Based Software Testing (SBST). – IEEE, 2021. – С. 32-33.}
+# SBST 2021: Kex results\footnote{Abdullin A., Akhin M., Belyaev M. Kex at the 2021 SBST Tool Competition //2021 IEEE/ACM 14th International Workshop on Search-Based Software Testing (SBST). – IEEE, 2021}
 
 \small
 * Kex was ranked fifth with score of 44.21
@@ -50,16 +75,17 @@ Automatic test case generation competition
 * Kex (and Reanimator) failed on some of the more complex language features (abstract classes, inner classes, etc.)
 * Kex required too much of disk space
 
-***Main teakeaway: Kex had a low level of maturity***
+***Main teakeaway: Kex had a low level of maturityw***
 
 
 ################################################################################
 
 # SBST 2021: implications
 
+* Kfg was fixed and (hopefully) became more stable
 * Kfg and Kex were optimized w.r.t. RAM usage:
 	* Kfg currently uses \~2 times less RAM
-	* Kex uses only one copy of each classes of PUT
+	* Kex uses Kfg more optimally
 * Kex and Reanimator were extended to support some new language features
 
 \begin{center}
@@ -101,7 +127,7 @@ Automatic test case generation competition
 
 \pause
 
-*Many of the standard library methods and classes can be approximated*
+*Many of the standard library classes can be approximated*
 
 <!-- * Java standard library is used almost everywhere
 * despite having access to standard library sources,
@@ -241,9 +267,9 @@ objects on average
 
 # New evaluation
 
-* integrated Reanimator as an optional test generation module in Tardis\footnote{Braione P., Denaro G. SUSHI and TARDIS at the SBST2019 Tool Competition //2019 IEEE/ACM 12th International Workshop on Search-Based Software Testing (SBST). – IEEE, 2019. – С. 25-28.}
+* integrated Reanimator as an optional test generation module in Tardis\footnote{Braione P., Denaro G. SUSHI and TARDIS at the SBST2019 Tool Competition //2019 IEEE/ACM 12th International Workshop on Search-Based Software Testing (SBST). – IEEE, 2019}
 	* extended Tardis model computation
-* compared with its default test generator --- Evosuite\footnote{Fraser G., Arcuri A. Evosuite: automatic test suite generation for object-oriented software //Proceedings of the 19th ACM SIGSOFT symposium. – 2011. – С. 416-419.}
+* compared with its default test generator --- Evosuite\footnote{Fraser G., Arcuri A. Evosuite: automatic test suite generation for object-oriented software //Proceedings of the 19th ACM SIGSOFT symposium. – 2011}
 * used SBST 2021 benchmark for evaluation, but extended time budgets
 
 
@@ -276,7 +302,6 @@ objects on average
 * implement Tardis approach in Kex
 * compare both Tardis and Reanimator on random object generation
 * improve Reanimator (duh)
-* try to publish as is
 
 
 ################################################################################
@@ -297,18 +322,24 @@ objects on average
 # Contact information
 
 <!-- link -->
-<abdullin@kspt.icc.spbstu.ru>
+emial:
 
-<azat.abdullin@jetbrains.com>
+* <abdullin@kspt.icc.spbstu.ru>
+* <azat.abdullin@jetbrains.com>
+
+reposotory:
+
+* <https://github.com/vorpal-research/kex>
 
 \vspace{15mm}
 
 <!-- columns -->
 :::::::::::::: {.columns}
-::: {.column width="50%"}
+::: {.column width="30%"}
+\vspace{-10mm}
 ![](jetbrainsResearch)
 :::
-::: {.column width="50%"}
+::: {.column width="40%"}
 \vspace{1mm}
 ![](polytech)
 :::
