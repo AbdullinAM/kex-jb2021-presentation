@@ -10,12 +10,11 @@
 
 ################################################################################
 
-# Overview
+# Kex overview
 
-\vspace{5mm}
 ![](kexOverview)
 
-\vspace{5mm}
+\vspace{-8mm}
 \begin{figure}
   \hspace{91.5mm} 
   \includegraphics[scale=0.7]{mk3guyBorealis}
