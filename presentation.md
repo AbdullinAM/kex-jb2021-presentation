@@ -179,16 +179,17 @@ Kex substitutes all Java runtime operations with approximated analogs if they ar
 ```java
 @Override
 public boolean add(E e) {
-  AssertIntrinsics.kexNotNull(elementData);
-  int oldLength = elementData.length;
-  elementData = CollectionIntrinsics.generateObjectArray(
-  	oldLength + 1, 
-  	index -> {
-      if (index < oldLength) return elementData[index];
-      else return null;
-  });
-  elementData[oldLength] = e;
-  return true;
+	AssertIntrinsics.kexNotNull(elementData);
+	int oldLength = elementData.length;
+	elementData = CollectionIntrinsics.generateObjectArray(
+		oldLength + 1, 
+		index -> {
+			if (index < oldLength) return elementData[index];
+			else return null;
+		}
+	);
+	elementData[oldLength] = e;
+	return true;
 }
 ```
 
