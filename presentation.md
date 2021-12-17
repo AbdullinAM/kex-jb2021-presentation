@@ -93,7 +93,7 @@ Automatic test case generation competition
 \hline 
 \textbf{}    & \textbf{30s} & \textbf{120s}\\ 
 \hline
-\texttt{line coverage} & 22.31\% & 26.70\%\\ 
+\texttt{line coverage} & 22.31\% & 25.29\%\\ 
 \hline
 \texttt{branch coverage} & 14.69\% & 17.95\%\\ 
 \hline
@@ -198,11 +198,13 @@ public boolean add(E e) {
 
 # Support of intrinsics
 
-Predicate State level support:
+Kex level support:
 
 * Kfg extended to support `invokedynamic`
 * PS extended to support lambdas
 	* lambdas can't change program state
+
+\pause
 
 SMT level support:
 
@@ -324,6 +326,7 @@ objects on average
 * extend standard library support
 	* support of state chages in lambdas
 	* more classes
+* move towards concolic testing
 
 
 ################################################################################
