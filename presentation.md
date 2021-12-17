@@ -67,7 +67,7 @@ Automatic test case generation competition
 \hline 
 \textbf{}    & \textbf{30s} & \textbf{120s}\\ 
 \hline
-\texttt{line coverage} & 21.70\% & 25.29\%\\ 
+\texttt{line coverage} & 22.31\% & 26.70\%\\ 
 \hline
 \texttt{branch coverage} & 14.69\% & 17.95\%\\ 
 \hline
@@ -171,12 +171,13 @@ Predicate State level support:
 
 SMT level support:
 
-* arrays are now represented as SMT arrays
+* slightly reworked memory model
+	* arrays are now represented as SMT arrays
 * $\exists$ and $\forall$ quantors for array operations
 * $\lambda$ expressions for array generation
 * experimented with SMT string theory (unsuccessfully)
 
-################################################################################
+<!-- ################################################################################
 
 # SMT support of intrinsics
 
@@ -184,7 +185,7 @@ SMT level support:
 \begin{overprint}
 \onslide<1>\includegraphics{oldMemoryModel}
 \onslide<2>\includegraphics{memoryModel}
-\end{overprint}
+\end{overprint} -->
 
 
 ################################################################################
@@ -238,26 +239,34 @@ objects on average
 
 ################################################################################
 
+# New evaluation
+
+* integrated Reanimator as an optional test generation module in Tardis\footnote{Braione P., Denaro G. SUSHI and TARDIS at the SBST2019 Tool Competition //2019 IEEE/ACM 12th International Workshop on Search-Based Software Testing (SBST). – IEEE, 2019. – С. 25-28.}
+	* extended Tardis model computation
+* compared with its default test generator --- Evosuite\footnote{Fraser G., Arcuri A. Evosuite: automatic test suite generation for object-oriented software //Proceedings of the 19th ACM SIGSOFT symposium. – 2011. – С. 416-419.}
+* used SBST 2021 benchmark for evaluation, but extended time budgets
+
+
+################################################################################
+
 # Reanimator: current state
 
-* implemented as part of Tardis\footnote{Braione P., Denaro G. SUSHI and TARDIS at the SBST2019 Tool Competition //2019 IEEE/ACM 12th International Workshop on Search-Based Software Testing (SBST). – IEEE, 2019. – С. 25-28.} tool
-* compared with its default test generator --- Evosuite\footnote{Fraser G., Arcuri A. Evosuite: automatic test suite generation for object-oriented software //Proceedings of the 19th ACM SIGSOFT symposium. – 2011. – С. 416-419.}
 
-\hspace{-100mm}
-
+\small
 \begin{center}
 \begin{tabular}{|r|c|c|c|c|}
 \hline 
 \textbf{}    & \textbf{60s} & \textbf{120s} & \textbf{300s} & \textbf{600s} \\ 
 \hline 
-\texttt{tardis + evosuite}  & 13.96\% & 15.71\% & 18.50\% & 19.60\% \\ 
+\texttt{tardis + evosuite}  & \textcolor{OliveGreen}{13.96\%} & 15.71\% & \textcolor{OliveGreen}{18.50\%} & \textcolor{OliveGreen}{19.60\%} \\ 
 \hline 
-\texttt{tardis + reanimator}  & 13.84\% & 15.99\% & 17.84\% & 19.30\%\\ 
-\hline 
+\texttt{tardis + reanimator}  & 13.84\% & \textcolor{OliveGreen}{15.99\%} & 17.84\% & 19.30\%\\ 
+\thickhline
 \texttt{kex + reanimator}  & 24.57\% & 25.29\% & 25.43\% & 27.61\%\\ 
 \hline
 \end{tabular} 
 \end{center}
+
 
 
 ################################################################################
@@ -267,6 +276,7 @@ objects on average
 * implement Tardis approach in Kex
 * compare both Tardis and Reanimator on random object generation
 * improve Reanimator (duh)
+* try to publish as is
 
 
 ################################################################################
@@ -275,6 +285,7 @@ objects on average
 
 * SBST 2022
 * finish work on Reanimator
+	* evaluation and publication
 	* integrate Reanimator with concolic mode
 * extend standard library support
 	* support of state chages in lambdas
@@ -286,6 +297,8 @@ objects on average
 # Contact information
 
 <!-- link -->
+<abdullin@kspt.icc.spbstu.ru>
+
 <azat.abdullin@jetbrains.com>
 
 \vspace{15mm}
