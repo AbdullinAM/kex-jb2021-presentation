@@ -38,7 +38,7 @@ Automatic test case generation competition
 
 * 6 test projects with 98 benchmarks
 * 30 and 120 second time budgets
-* 4 participaiting tools and 1 baseline
+* 4 participating tools and 1 baseline
 
 
 ################################################################################
@@ -50,8 +50,6 @@ Automatic test case generation competition
 ![](sbstCoverage)
 :::
 ::::::::::::::
-
-<!-- ![](iMade) -->
 
 \vspace{-7mm}
 \begin{figure}
@@ -70,12 +68,12 @@ Automatic test case generation competition
 	* average coverage of \~20\%
 * Kex failed on 5 out of 6 projects
 	* 1 project failed because of unhandled ASM error
-	* 2 projects failed because Kfg encoutered some unexpected bytecode 
+	* 2 projects failed because Kfg encountered some unexpected bytecode 
 	* 2 projects failed because Kex required too much RAM
 * Kex (and Reanimator) failed on some of the more complex language features (abstract classes, inner classes, etc.)
 * Kex required too much of disk space
 
-***Main teakeaway: Kex had a low level of maturity***
+***Main takeaway: Kex had a low level of maturity***
 
 
 ################################################################################
@@ -128,39 +126,15 @@ Automatic test case generation competition
 ![](oldRT2)
 :::
 ::::::::::::::
-<!-- \begin{overprint}
-\onslide<1>\includegraphics{oldRT2}
-\onslide<2>\includegraphics{oldRT2}
-\end{overprint} -->
 
 \pause
 
 *Many of the standard library classes can be approximated*
 
-<!-- * Java standard library is used almost everywhere
-* despite having access to standard library sources,
-Kex struggles to simulate it
-* many of the standard library methods and classes can be approximated
-in SMT -->
-
-
-<!-- ################################################################################
-
-# Intrinsics library\footnote{https://github.com/vorpal-research/kex-intrinsics}
-
-Intrinsics for basic operations and checks:
-
-* `assertions` and `assumes`
-* `unknown` values with no constraints
-* array operations:
-	* `contains` checks
-	* array generation methods
-* etc. -->
-
 
 ################################################################################
 
-# Java rt-1.8 approximarion
+# Java rt-1.8 approximation
 
 Prototype implementation based on `kex-intrinsics`\footnote{https://github.com/vorpal-research/kex-intrinsics}:
 
@@ -173,7 +147,7 @@ Kex substitutes all Java runtime operations with approximated analogs if they ar
 
 ################################################################################
 
-# Exmaple of `ArrayList::add` method
+# Example of `ArrayList::add` method
 
 \small
 ```java
@@ -214,23 +188,13 @@ SMT level support:
 * $\lambda$ expressions for array generation
 * experimented with SMT string theory (unsuccessfully)
 
-<!-- ################################################################################
-
-# SMT support of intrinsics
-
-\vspace{10mm}
-\begin{overprint}
-\onslide<1>\includegraphics{oldMemoryModel}
-\onslide<2>\includegraphics{memoryModel}
-\end{overprint} -->
-
 
 ################################################################################
 
 # Java standard library support: current state
 
 * prototype implementation
-	* limited in expressivness
+	* limited in expressiveness
 	* limited number of supported classes
 * no thorough evaluation
 	* experiments show a small increase in coverage
@@ -241,7 +205,7 @@ SMT level support:
 # 
 
 \vspace{8mm}
-<!-- columns -->
+
 :::::::::::::: {.columns}
 ::: {.column width="70%"}
 ![](transition)
@@ -324,7 +288,7 @@ objects on average
 	* evaluation and publication
 	* integrate Reanimator with concolic mode
 * extend standard library support
-	* support of state chages in lambdas
+	* support of state changes in lambdas
 	* more classes
 * move towards concolic testing
 
@@ -334,12 +298,12 @@ objects on average
 # Contact information
 
 <!-- link -->
-emial:
+email:
 
 * <abdullin@kspt.icc.spbstu.ru>
 * <azat.abdullin@jetbrains.com>
 
-reposotory:
+repository:
 
 * <https://github.com/vorpal-research/kex>
 
@@ -358,18 +322,3 @@ reposotory:
 ::::::::::::::
 
 ################################################################################
-
-
-<!-- 
-
-################################################################################
-
-# Kex related projects
-
-* **Darya Grechishkina "Loop backstabbing for Kex"**
-* **Vladislav Feofilaktov "Spider"**
-* Petr Menshov "Effectiveness of paths search algorithms in Concolic Testing"
-	* based on the prototype from Andrey Bychkov "Conteau: Concolic Testing Augmented"
-* Golubev Kirill "SymFPU for Boolector"
-* Viktor Korotkih "Interactive UI for Kex"
-* Ramis Sahibgareev "Kfg pass manager" -->
